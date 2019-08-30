@@ -4,11 +4,13 @@
 #
 Name     : mvn-aliyun-oss-java-sdk
 Version  : 2.8.3
-Release  : 1
+Release  : 2
 URL      : https://github.com/aliyun/aliyun-oss-java-sdk/archive/2.8.3.tar.gz
 Source0  : https://github.com/aliyun/aliyun-oss-java-sdk/archive/2.8.3.tar.gz
 Source1  : https://repo1.maven.org/maven2/com/aliyun/oss/aliyun-sdk-oss/2.8.3/aliyun-sdk-oss-2.8.3.jar
 Source2  : https://repo1.maven.org/maven2/com/aliyun/oss/aliyun-sdk-oss/2.8.3/aliyun-sdk-oss-2.8.3.pom
+Source3  : https://repo1.maven.org/maven2/com/aliyun/oss/aliyun-sdk-oss/3.4.1/aliyun-sdk-oss-3.4.1.jar
+Source4  : https://repo1.maven.org/maven2/com/aliyun/oss/aliyun-sdk-oss/3.4.1/aliyun-sdk-oss-3.4.1.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : Apache-2.0
@@ -28,6 +30,7 @@ data components for the mvn-aliyun-oss-java-sdk package.
 
 
 %prep
+%setup -q -n aliyun-oss-java-sdk-2.8.3
 
 %build
 
@@ -38,6 +41,12 @@ cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-s
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/2.8.3
 cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/2.8.3/aliyun-sdk-oss-2.8.3.pom
 
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/3.4.1
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/3.4.1/aliyun-sdk-oss-3.4.1.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/3.4.1
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/3.4.1/aliyun-sdk-oss-3.4.1.pom
+
 
 %files
 %defattr(-,root,root,-)
@@ -46,3 +55,5 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-s
 %defattr(-,root,root,-)
 /usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/2.8.3/aliyun-sdk-oss-2.8.3.jar
 /usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/2.8.3/aliyun-sdk-oss-2.8.3.pom
+/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/3.4.1/aliyun-sdk-oss-3.4.1.jar
+/usr/share/java/.m2/repository/com/aliyun/oss/aliyun-sdk-oss/3.4.1/aliyun-sdk-oss-3.4.1.pom
